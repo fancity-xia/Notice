@@ -26,4 +26,34 @@ heapq.nsmallest(3,dict,key=lambda s:s['keyname'])
 heapq.heapify(list)
 heap[0]总是最小的那个元素,接下来的元素可以依次通过heapq.heappop()方法轻松找到(操作复杂度为O(logN),N为堆大小)
 用heap实现简单的优先级队列
+可以用正负反向排序,可以插入index作为tuple[1]对tuple[0]一样list的进行再排序
 ######
+from collections import defaultdict
+
+form collections import OrdereDict
+双向链表，大小为普通dict的2倍，重新赋值也不会改变键顺序
+利用zip将字典的键值反转，然后再sorted
+sorted(prices.values(),prices.keys()) zip的内容只能被利用一次
+prices[min(prices, key=lambda k:prices[k])]
+字典的keys()方法会返回keys-view对象,支持常见集合操作,比如并集交集差集
+字典之间可以直接keys取交集
+a.keys() & b.keys() # 'y', 'x'
+{i:a[i] for i in a.keys() - {'z'}} #比较难理解的操作
+所有python不可改变的对象都是可哈希的，它对应的哈希值就是它们的id
+
+from collections import Counter #可哈希的对象
+word_counts = Counter(words)
+top_three = word_counts.most_common(3)
+它的实例可以进行数学运算
+
+######
+dict排序
+from operator import itemgetter
+对象是一个或者多个字典中的值排序
+attrgetter 对可调用对象实例进行排序
+
+
+
+
+
+
