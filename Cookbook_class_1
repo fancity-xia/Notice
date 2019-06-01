@@ -1,7 +1,29 @@
-序列分解：可迭代对象(元组,列表,字符串,文件,迭代器,生成器)
+1.序列分解：可迭代对象(元组,列表,字符串,文件,迭代器,生成器)
 *表达式 分解出N个元素
 *_ 为丢弃变量  但对于的变量名依旧有值,只是习惯的一种处理方式
 s=[1,2,3,4,5,6]
 head,*_,tail = s
 _=[2,3,4,5]
 可以通过这种分解方式实现sum求和(迭代)
+######
+2.deque
+from collection import deque
+deque(maxlen=N) 最大保留的记录数
+deque and list
+数据集越大，队列相对于list性能越好,功能上基本一致,但是deque只能用sorted进行排序
+功能方法上涵盖了list的,且独特的有append appendleft pop popleft(https://www.jianshu.com/p/06118172a8c8)
+从队列2端弹出或者添加元素复杂度都是O(1)而list是O(N)
+
+3.yield:迭代生成器
+有return的作用,next再次掉起时会接着yield的那一行之后接着运行,方便节约大的内存运算每次调用只计算一次,目前python的range即是
+sys.getsizeof()计算内存情况
+
+4.heapq 寻找最大或最小的N个元素
+import heapq
+heapq.nlargest,heapq.nsmallest
+由于存在key参数  故可以处理更加复杂的数据结构
+heapq.nsmallest(3,dict,key=lambda s:s['keyname'])
+heapq.heapify(list)
+heap[0]总是最小的那个元素,接下来的元素可以依次通过heapq.heappop()方法轻松找到(操作复杂度为O(logN),N为堆大小)
+用heap实现简单的优先级队列
+######
