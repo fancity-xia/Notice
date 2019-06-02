@@ -12,6 +12,11 @@ match (只搜索字符串首部)和 findall(搜索整个字符串 finditer实现
 str.replace => re.sub
 re.sub(r'(\d)/(\d)\(\d)', r'\3-\1-\2', text)
 
-
+from calendar import month_abbr(把数字月份转换成日历里面的月份Nov，Mar等字符串)
+re.subn() 获得替换次数
+mathch()和find()用.group()的方法提取匹配项
+re.findall('python',text,flag=re.IGNORECASE)
+在正则表达式里面* or + 操作符后面加上?即是最短匹配
+在常规正则表达式中 .不能匹配\n ，可以在re.compile(r'\*(.*)\*', re.DOTALL)
 
 
