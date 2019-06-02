@@ -1,1 +1,17 @@
+re.split
+fields = re.split(r'(;|,|\s)\s*',line) #获取到捕捉组
+fields[::2] 
+fields = re.split(r'(?;|,|\s)\s*',line) #不获取捕捉组
+
+str.startswith,str.endswith,str.find获取参数为元组(提前用tuple转换)
+
+shell通配符匹配
+from fnmatch import fnmatch(因操作系统而异),fnmatchcase(强制区分大小写)
+re.compile()
+match (只搜索字符串首部)和 findall(搜索整个字符串 finditer实现迭代匹配获取)
+str.replace => re.sub
+re.sub(r'(\d)/(\d)\(\d)', r'\3-\1-\2', text)
+
+
+
 
