@@ -41,8 +41,17 @@ a.keys() & b.keys() # 'y', 'x'
 {i:a[i] for i in a.keys() - {'z'}} #比较难理解的操作
 所有python不可改变的对象都是可哈希的，它对应的哈希值就是它们的id
 
+######
+slice切片操作
+a=slice(1,5,2)
+s='helloword'
+for i in range(*a.indices(len(s)))
+#*+list 把list结果拆开来作为参数输入
+#**+dict 把字典的value拆开来作为参数
+  print(s[i])
+######
 from collections import Counter #可哈希的对象
-word_counts = Counter(words)
+word_counts = Counter(list)
 top_three = word_counts.most_common(3)
 它的实例可以进行数学运算
 
@@ -50,7 +59,45 @@ top_three = word_counts.most_common(3)
 dict排序
 from operator import itemgetter
 对象是一个或者多个字典中的值排序
+可以用lambda取代它的功能
+row_by_lfname = sorted(dict, key=itemgetter('lname','fname'))
+row_by_lfname = sorted(dict, key=lambda r:r['lname'],r['fname'])
 attrgetter 对可调用对象实例进行排序
+sorted(users,key=attrgetter('user_id'))
+sorted(user,key=lambda u:u.user_id)
+######
+from itertools import groupby
+groupby()通过扫描序列找出拥有相同值并将他们分组,创建一个迭代器;可被字典赋值取代
+[n for n in mylist if n > 0]
+(n for n in mylist if n > 0)
+简单标准无法筛选时选用filter(func, values)函数处理得生成器
+list(filter(is_int, values))
+from itertools import compress
+可以根据布尔值返回列表值的生成器
+######
+字典推导式
+tech_name必须为set
+{key:prices[key] for key in prices.keys() & tech_name}
+命名元组
+from collections import namedtuple
+Subscriber = namedtuple('subs',['adress','joined'])
+实例化对象 = 函数('实例的函数对象命名',[属性list])
+sub = Subscriber('join@qq.com', '2019-6-02')
+#subs(addr='join@qq.com', joined='2019-6-02')
+它拥有tuple所有的特性，比如索引和分解，它可以替代字典，后者需要更多的空间存储，因此对于大数据结果它更加有效，不过它是不可变的
+如果需要修改属性可以通过实例的_replace()实现
+
+生成器作为参数更为有效高雅的方式
+nums = sum(x*x for x in nums)
+######
+GC?内存释放机制??
+from collections import ChainMap 
+多个映射合并为单个映射，如果有重复的键会引用第一个字典的值，对合并后的字典操作(del,添加键值)只会作用改变第一个字典
+也可以用update替换，但是这种是重新生成了一个字典了，任何修改添加无法返回回子字典中
+
+
+
+
 
 
 
