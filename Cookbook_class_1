@@ -91,6 +91,7 @@ sub = Subscriber('join@qq.com', '2019-6-02')
 nums = sum(x*x for x in nums)
 ######
 GC?内存释放机制??
+首先del 函数然后进行gc.collect() 每进行一次调用会对其进行+1记录，每次gc.collect从零释放内存,当del之后记录就变成了-1
 from collections import ChainMap 
 多个映射合并为单个映射，如果有重复的键会引用第一个字典的值，对合并后的字典操作(del,添加键值)只会作用改变第一个字典
 也可以用update替换，但是这种是重新生成了一个字典了，任何修改添加无法返回回子字典中
