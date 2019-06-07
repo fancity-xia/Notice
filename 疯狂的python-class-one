@@ -29,3 +29,16 @@ str本身有很多隐藏的变量
 str.lstrip/str.rstrip/str.strip
 str.startswith/str.endswith/str.find/str.index/str.replace/str.translaste
 str.translaste之前先用str.maketrans()对替换的字符串进行转换处理得到table，然后再用translate处理table
+######位运算符
+& 按位与
+| 按位或
+^ 按位异或 不一样保留1
+~ 按位取反 
+正数的补码和原码完全相同，负数的补码是其反码加1,反码是对原码按位取反,只是最高位（符号位）保持不变。 
+<< 左位移运算符
+>> 右位移运算符
+按位非只需要一个操作数,这个运算符将把操作数在计算机底层的二进制码按照位取反
+数字转换成二进制
+bin(数字)  or   "{0:b}".format(数字)
+对数字或者字符串转换二进制之后再对应位置进行判断与或获得最后结果转换为数字
+
