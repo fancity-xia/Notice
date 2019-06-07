@@ -1,0 +1,31 @@
+######
+print(a,b,c,sep="",end="")
+r''会忽略掉特殊转义字符 比如路径则和直接使用r'G:\publish\codes\02\2.4'
+repr和str功能上基本一致,但是repr会将字符串以python表达式形式输出(也就是输出时会带上引号)
+######
+bytes字符串操作(二进制格式数据)
+1.直接在ASCII字符串前添加b
+b=bytes()
+b1=b'hello'
+2.调用bytes或者encoding构建
+b2=bytes('我爱python',encoding='utf8')
+b3="我爱python".encoding('utf8')
+b3.decode('utf8')
+######
+d/i 十进制整数
+e/E 科学计数法表示浮点数
+f/F 十进制形式浮点数
+g/G 智能选择使用fF/eE格式
+s/r str或者repr格式
+在%和转换符中间数字表示字符串宽度，前面可加0(默认空格填充)前面+-表示左对齐和右对齐
+print("num is:%+05d"%100)
+num is:+0100
+print("num is: %5G"%1000000)
+num is: 1E+06
+######
+str.title() 每个单词首位大写
+str.capitalize() 首位大写
+str本身有很多隐藏的变量
+str.lstrip/str.rstrip/str.strip
+str.startswith/str.endswith/str.find/str.index/str.replace/str.translaste
+str.translaste之前先用str.maketrans()对替换的字符串进行转换处理得到table，然后再用translate处理table
