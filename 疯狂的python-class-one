@@ -41,4 +41,29 @@ str.translaste之前先用str.maketrans()对替换的字符串进行转换处理
 数字转换成二进制
 bin(数字)  or   "{0:b}".format(数字)
 对数字或者字符串转换二进制之后再对应位置进行判断与或获得最后结果转换为数字
+######
+三目操作符
+print("c 大于 d") if c > d else (print("c 小于 d") if c < d else print("c 等于 d"))
+先执行c>d?? 然后否的话进入第二次c<d??
 
+######
+只要不改变元素列表和元组操作是一样
+1.索引元素 2.提取子序列 3.加法 4.乘法(只能和整数相乘)
+in运算 len max min
+append,extend(追加一个tuple或者list),insert,del(可以删除变量和list[index]),list.remove(value),clear
+修改表内元素，直接赋值为空即删除，赋值len长度长即插入元素，不能使用单个元素，否则会分解成序列，如果用slice的时候有step则赋值必须长度相等
+dir(list)可显示list所有方法
+pop 元素出栈即每次移除一个元素作为输出并改变原数据集
+
+######
+dict
+setdefault
+cars.setdefault('PORSCHE',9.2)  设置默认值，如果该键值存在则不修改内容
+fromkeys
+a_dict= dict.fromkeys (['a','b'],'value') 创建2包含2个key的字典，value=None or value = 'value'
+
+字典格式化字符串
+temp='书名是:%(name)s,价格是:%(price)010.2f,出版社是:%(publish)s'
+book={'name':'疯狂 Python 讲义', 'price': 88.9,'publish':'电子社'}
+print(temp % book)
+书名是:疯狂 Python 讲义,价格是:0000088.90,出版社是:电子社
