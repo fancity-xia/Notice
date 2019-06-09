@@ -1,0 +1,46 @@
+######
+函数参数传入
+函数传入list或者dict时是传入一个引用变量，进行重新赋值时是对字典或者list本身进行了重新修改，比如完全相同的list或者dict id是不一致的
+globals() locals() vars() nonlocal()
+在函数内部对不存在的变量赋值时默认就是重新定义新的局部变量，因此这行代码相当于重新定义了name局部变量，这样name全局变量就被屏蔽了。
+直接在函数内存重新申明下global name
+from types import MethodType
+将函数绑定到对应的类中间去 p.intro = MethodType(intro_func,p)
+
+修饰@
+funA修饰funB
+1.将funB作为funA的参数；funA(funB)
+2.将funB替换成第一步的执行结果
+
+property
+property传入4个参数，意味着可读可写可删除也有说明文档的属性
+func：getNA,setNA,delNA,__doc__
+example: size=property(getNA, setNA, delNA, __doc__)
+把方法变成和属性一样的可读操作性
+
+隐藏和封装
+__name 命名前面添加__进行伪装
+实例.对象__name = ''重新进行修改，所以不是完全意义上的隐藏
+
+
+######
+多继承
+优先考虑前面类搜索到的方法
+继承的多个方式
+super().__init__(属性)
+类名.__init__(self,属性)
+
+__slots__属性的值时一个元组,列出了该类实例允许动态添加的所有属性
+不限制通过类来动态添加的方法
+
+枚举
+一般都有name和value的属性
+import enum
+enum.Enum(Season,('spring','summer','fall','winter'))
+value默认时从1开始
+or
+class orientation(enum.Enum)
+  spring=1
+  ...
+ 
+ 
