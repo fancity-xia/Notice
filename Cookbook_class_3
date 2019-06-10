@@ -1,0 +1,9 @@
+@staticmethod和@classmethod 和  @property
+classmethod中可以调用类中定义的其他方法、类的属性，但staticmethod只能通过A.a调用类的属性，但无法通过在该函数内部调用A.foo2()@property
+self指代的是类的对象，self.__class__才是类本身,cls一般作为@classmethod修饰后的函数的第一个参数表示类本身，
+@staticmethod修饰后的函数不需要任何来自类或者对象的参数(self or cls)
+class T():
+  def A():
+    print(self)
+t=T()
+t.A() = T.A(t)
