@@ -9,3 +9,23 @@ class T():
     print(self)
 t=T()
 t.A() = T.A(t)
+
+##logging
+https://www.cnblogs.com/darkpig/p/5924820.html
+CRITICAL > ERROR > WARNING > INFO > DEBUG > NOTSET
+import logging  
+logging.debug('debug message')  
+logging.info('info message')  
+logging.warning('warning message')  
+logging.error('error message')  
+logging.critical('critical message') 
+只显示了大于等于WARNING级别的日志
+WARNING:root:warning message
+ERROR:root:error message
+CRITICAL:root:critical message
+logging.basicConfig(level=logging.DEBUG,  
+                    format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',  
+                    datefmt='%a, %d %b %Y %H:%M:%S',  
+                    filename='/tmp/test.log',  
+                    filemode='w') 
+                
