@@ -29,7 +29,14 @@ logging.basicConfig(level=logging.DEBUG,
                     filename='/tmp/test.log',  
                     filemode='w') 
                 
-##
+##计算str相似度
 import difflib
 seq = difflib.SequenceMatcher(lambda x: x in ' 我的雪', str1,str2)
 import Levenshtein
+sim = Levenshtein.distance(str1, str2)
+# 4.计算莱文斯坦比
+sim = Levenshtein.ratio(str1, str2)
+# 5.计算jaro距离
+sim = Levenshtein.jaro(str1, str2 )
+# 6. Jaro–Winkler距离
+sim = Levenshtein.jaro_winkler(str1 , str2 )
