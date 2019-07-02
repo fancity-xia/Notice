@@ -29,3 +29,7 @@ logging.basicConfig(level=logging.DEBUG,
                     filename='/tmp/test.log',  
                     filemode='w') 
                 
+##
+import difflib
+seq = difflib.SequenceMatcher(lambda x: x in ' 我的雪', str1,str2)
+import Levenshtein
