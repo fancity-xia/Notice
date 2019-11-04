@@ -1,0 +1,8 @@
+csv format
+import csv
+
+读取存储格式
+csv.reader() #元组
+csv.DictReader(r) #字典
+命名元组
+namedtuple('',[] or ())
