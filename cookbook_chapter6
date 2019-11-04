@@ -5,4 +5,24 @@ import csv
 csv.reader() #元组
 csv.DictReader(r) #字典
 命名元组
-namedtuple('',[] or ())
+Atuple = namedtuple('',[] or ())
+Atuple([])
+
+json
+支持None,bool,int,float,str,列表,元组,字典
+json编码格式基本与python一致,只是False->false True->true None->null
+indent = 4 #打印缩进
+sort_keys = Pool #排序处理
+json.dump
+json.dumps
+
+json.load()方法提供了object_pairs_hook或object_hook
+from collections import OrderedDict
+data = json.load(s, object_pairs_hook = OrderedDict)
+
+类实例一般无法序列化未JSON
+
+xml 
+xml.etree.ElementTree import parse
+xml.etree.ElementTree import iterparse(批量)
+lxml
